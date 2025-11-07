@@ -30,6 +30,11 @@ structured so each milestone teaches a new concept while adding genuinely useful
    python -m ai_learning_studio.cli --phase 3
    python -m ai_learning_studio.cli --next --after 0
    ```
+   To automatically run `git fetch`/`git pull` before loading the phases, opt in by setting
+   `AI_LEARNING_STUDIO_AUTO_PULL=1`. The CLI will only run these commands when executed inside a
+   Git repository. For private repositories make sure your Git credential helper or personal access
+   token is configured so `git pull` can authenticate without prompting; never commit long-lived
+   tokens to source control or shell history.
 4. Run the smoke tests:
    ```bash
    python -m unittest discover -s tests -p "test_*.py"
